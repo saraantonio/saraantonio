@@ -37,5 +37,11 @@ document.getElementById('rsvp-form').addEventListener('submit', function (e) {
   })
   .catch(() => {
     success.textContent = 'Something went wrong. Please try again.';
-  });
+  })
+      return ContentService
+    .createTextOutput(JSON.stringify(data))
+    .setMimeType(ContentService.MimeType.JSON)
+    .setHeader("Access-Control-Allow-Origin", "*")
+    .setHeader("Access-Control-Allow-Methods", "GET, POST")
+    .setHeader("Access-Control-Allow-Headers", "Content-Type");
 });
