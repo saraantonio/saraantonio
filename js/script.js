@@ -26,7 +26,7 @@ document.getElementById('rsvp-form').addEventListener('submit', function (e) {
   const form = e.target;
   const success = document.getElementById('success');
 
-  fetch('https://script.google.com/macros/s/AKfycbwI1dMJLXsHfzvM-O9DbOFEzJyw-dGlVxJOIQ00xDLkHC4KekgxI77HqFarTuyt-f5X/exec', {
+  fetch('https://script.google.com/macros/s/AKfycbzPPg-IGnlgjc20UhkKQPzAER9g61VjBamrAJJ4RlOSD0fEFt-BP3Jf0ggYinQpDR6d/exec', {
     method: 'POST',
     body: new FormData(form)
   })
@@ -37,11 +37,5 @@ document.getElementById('rsvp-form').addEventListener('submit', function (e) {
   })
   .catch(() => {
     success.textContent = 'Something went wrong. Please try again.';
-  })
-      return ContentService
-    .createTextOutput(JSON.stringify(data))
-    .setMimeType(ContentService.MimeType.JSON)
-    .setHeader("Access-Control-Allow-Origin", "*")
-    .setHeader("Access-Control-Allow-Methods", "GET, POST")
-    .setHeader("Access-Control-Allow-Headers", "Content-Type");
+  });
 });
