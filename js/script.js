@@ -26,7 +26,7 @@ document.getElementById('rsvp-form').addEventListener('submit', function (e) {
   const form = e.target;
   const success = document.getElementById('success');
 
-  fetch('https://script.google.com/macros/s/AKfycbzPPg-IGnlgjc20UhkKQPzAER9g61VjBamrAJJ4RlOSD0fEFt-BP3Jf0ggYinQpDR6d/exec', {
+  fetch('https://script.google.com/macros/s/AKfycbzlWnyf7PVF0aka-WpAXkcuKhdDy_vBK--NC-dm3XmUZeCbTBKO-KVtxMZLAXtPwm25/exec', {
     method: 'POST',
     body: new FormData(form)
   })
