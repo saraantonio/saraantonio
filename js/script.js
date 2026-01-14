@@ -26,16 +26,16 @@ document.getElementById('rsvp-form').addEventListener('submit', function (e) {
   const form = e.target;
   const success = document.getElementById('success');
 
-  fetch('https://script.google.com/macros/s/AKfycbzwmuf92xREOjCMGpnOKOvGSu01dRA58T8RoBq4SQkCiMN0xFcUrXQSFRMkQviA96zl/exec', {
+  fetch('https://script.google.com/macros/s/AKfycbzb9gLRwmTYMYdhcISSXkUKT5IrEmjP7JSWBJT_x_ZsuHx777Q7HiKxPnzTT7Ur3fgS/exec', {
     method: 'POST',
     body: new FormData(form)
   })
   .then(() => {
-    success.textContent = 'Thank you for your response!';
+    success.textContent = 'Ви благодариме за вашиот одговор!';
     success.style.opacity = 1;
     form.reset();
   })
   .catch(() => {
-    success.textContent = 'Something went wrong. Please try again.';
+    success.textContent = 'Нешто тргна наопаку. Ве молиме обидете се повторно.';
   });
 });
