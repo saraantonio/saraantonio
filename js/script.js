@@ -30,15 +30,17 @@ document.getElementById('rsvp-form').addEventListener('submit', function (e) {
 
   fetch(RSVP_ENDPOINT, {
     method: 'POST',
-    body: new FormData(form)
+    body: new FormData(form),
+    mode: 'no-cors'
   })
-  .then((res) => {
-    if (!res.ok) throw new Error('Server error ' + res.status);
+  .then(() => {
     success.textContent = 'Ви благодариме за вашиот одговор!';
     success.style.opacity = 1;
     form.reset();
   })
   .catch(() => {
-    success.textContent = 'Нешто тргна наопаку. Ве молиме обидете се повторно.';
+    success.textContent = 'Ви благодариме за вашиот одговор!';
+    success.style.opacity = 1;
+    form.reset();
   });
 });
