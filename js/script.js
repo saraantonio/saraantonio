@@ -1,4 +1,4 @@
-const RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxLhSxC5zuvG-IGhHUIOdiAQWacUAmRrw4muf59A6ssCnNbQ7DeScc4_YUrtU6A5gU_/exec';
+const RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxk-p6TJ4LsWYy1f7R9fE9KRnxmPgV2VMZF07WdJ3gj5BsNAm-i-ZP5bo2sD3mvnmjH/exec';
 
 function openEnvelope() {
   const envelope = document.querySelector('.envelope');
