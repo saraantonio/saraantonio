@@ -1,3 +1,5 @@
+const RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzH-tTdX3S9C0tm1u4TW-rxdGQ9pPItyIM_2AK3HYev-Xjh02IEGDkR3peNOsl2VyP5/exec';
+
 function openEnvelope() {
   const envelope = document.querySelector('.envelope');
   envelope.classList.add('open');
@@ -26,11 +28,12 @@ document.getElementById('rsvp-form').addEventListener('submit', function (e) {
   const form = e.target;
   const success = document.getElementById('success');
 
-  fetch('https://script.google.com/macros/s/AKfycbzb9gLRwmTYMYdhcISSXkUKT5IrEmjP7JSWBJT_x_ZsuHx777Q7HiKxPnzTT7Ur3fgS/exec', {
+  fetch(RSVP_ENDPOINT, {
     method: 'POST',
     body: new FormData(form)
   })
-  .then(() => {
+  .then((res) => {
+    if (!res.ok) throw new Error('Server error ' + res.status);
     success.textContent = 'Ви благодариме за вашиот одговор!';
     success.style.opacity = 1;
     form.reset();
